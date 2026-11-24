@@ -1,0 +1,22 @@
+html,body{margin:0;height:100%;overflow:hidden;background:#06061a;color:#fff;font-family:"Trebuchet MS",system-ui,sans-serif;-webkit-user-select:none;user-select:none}
+.hidden{display:none!important}
+.scr{position:fixed;inset:0;padding:2vw;box-sizing:border-box}
+.title{font-size:9vw;font-weight:900;letter-spacing:.05em;color:#0ff;text-shadow:0 0 30px #0ff,0 0 70px #f0f;margin:0}
+.sub{font-size:max(18px,2vw);opacity:.85;margin:0}
+.big{font-size:max(28px,6vw);font-weight:900;margin:.2em 0;text-shadow:0 0 25px #0ff}
+.btn{font-size:max(22px,3vw);font-weight:800;padding:.5em 1.2em;border-radius:1em;border:4px solid #0ff;background:#101040;color:#fff;transition:.15s}
+.btn.ok{background:#0a8;border-color:#7fb}
+.hov{transform:scale(1.07);box-shadow:0 0 45px #0ff,0 0 15px #fff inset;filter:brightness(1.3)}
+#lib{overflow-y:auto;scrollbar-width:none}#lib::-webkit-scrollbar{display:none}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:2vw}
+.card{height:34vh;border-radius:1.2em;border:3px solid #fff3;color:#fff;text-align:left;padding:1em;background:linear-gradient(135deg,var(--a),var(--b));display:flex;flex-direction:column;justify-content:flex-end;transition:.15s;overflow:hidden}
+.card .cover{font-size:9vh;line-height:1;margin-bottom:auto;text-shadow:0 4px 20px #0008}
+.card h3{font-size:max(20px,2vw);margin:0;font-weight:900}.card p{margin:.2em 0 0;font-size:max(13px,1.1vw);opacity:.9}
+#cv{position:fixed;inset:0;z-index:1}
+#exit{position:fixed;top:16px;right:16px;width:110px;height:110px;border-radius:50%;background:#f22;border:5px solid #fff;font-size:64px;color:#fff;z-index:60}
+#modal{position:fixed;inset:0;background:#000d;z-index:50;display:flex;align-items:center;justify-content:center;text-align:center}
+#mbox .code{font-size:22vw;font-weight:900;color:#0ff;text-shadow:0 0 40px #0ff;letter-spacing:.1em;line-height:1}
+#mbox .row{display:flex;gap:2vw;justify-content:center;margin-top:2vh;flex-wrap:wrap}#mbox .btn{margin-top:2vh}
+.codeIn{font-size:14vw;width:70vw;max-width:400px;text-align:center;background:#101040;color:#0ff;border:4px solid #0ff;border-radius:16px}
+#cur{position:fixed;width:56px;height:56px;border:5px solid #0ff;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:100;display:none;box-shadow:0 0 25px #0ff}
+#cur.pin{background:#ff0;border-color:#fff;box-shadow:0 0 60px #ff0;transform:translate(-50%,-50%) scale(.7)}

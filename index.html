@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>VR Arcade</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head><body>
+
+<!-- TELA INICIAL: escolha TV ou celular -->
+<section id="home" class="scr flex flex-col items-center justify-center gap-6 text-center">
+  <h1 class="title">VR ARCADE</h1>
+  <p class="sub">Jogue com o corpo. O celular é a câmera, a TV é a tela.</p>
+  <button data-hit class="btn ok" onclick="enterTV()">📺 USAR NA TV</button>
+  <button data-hit class="btn" onclick="showCam('MODO CÂMERA')">📱 MODO CÂMERA</button>
+  <button data-hit class="btn" onclick="showCam('ENTRAR COMO JOGADOR 2')">👥 ENTRAR COMO JOGADOR 2</button>
+</section>
+
+<!-- BIBLIOTECA (TV) -->
+<section id="lib" class="scr hidden">
+  <header class="flex items-center justify-between gap-4 mb-4">
+    <h1 class="title" style="font-size:5vw">VR ARCADE</h1>
+    <div class="flex items-center gap-4"><span id="st" class="sub"></span>
+      <button data-hit class="btn ok" id="bConn" onclick="host(0)">CONECTAR</button>
+      <button data-hit class="btn hidden" id="bDisc" onclick="desconectar()">DESCONECTAR</button></div>
+  </header>
+  <div id="grid"></div>
+</section>
+
+<!-- CELULAR: câmera -->
+<section id="cam" class="scr hidden flex flex-col items-center justify-center gap-4 text-center">
+  <h2 id="camTitle" class="big"></h2>
+  <div id="codeBox" class="flex flex-col items-center gap-4">
+    <p class="sub">Digite o código que aparece na TV</p>
+    <input id="codeIn" inputmode="numeric" maxlength="6" class="codeIn" placeholder="0000">
+    <button class="btn ok" onclick="joinCode()">ENTRAR</button>
+  </div>
+  <video id="vid" playsinline muted style="width:60vw;max-width:320px;transform:scaleX(-1);border-radius:16px"></video>
+  <p id="camMsg" class="sub"></p>
+  <button class="btn hidden" id="camOff" onclick="location.reload()">DESCONECTAR</button>
+</section>
+
+<canvas id="cv" class="hidden"></canvas>
+<button id="exit" data-hit class="hidden" onclick="closeGame()">✕</button>
+<div id="modal" class="hidden"><div id="mbox"></div></div>
+<div id="cur"></div>
+
+<script src="script.js"></script>
+<!-- ============ ADICIONAR NOVO JOGO ============
+ 1. Copie games/frutas.js para games/meujogo.js e edite.
+ 2. Adicione aqui uma linha: <script src="games/meujogo.js"></script>
+ Pronto: ele aparece sozinho na biblioteca. -->
+<script src="games/frutas.js"></script>
+<script src="games/baloes.js"></script>
+<script src="games/quebra-blocos.js"></script>
+<script src="games/desvia.js"></script>
+<script src="games/macaco.js"></script>
+<script src="games/danca.js"></script>
+<script src="games/espada.js"></script>
+<script src="games/arco.js"></script>
+<script src="games/boxe.js"></script>
+<script src="games/pintura.js"></script>
+</body></html>
